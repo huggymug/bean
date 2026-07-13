@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bean official :D</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    #bean {
+      position: absolute;
+      cursor: pointer;
+      user-select: none;
+      transition: top 0.15s ease, left 0.15s ease, transform 0.15s ease;
+      will-change: top, left, transform;
+    }
+  </style>
+</head>
+<body>
+
+  <img id="bean" src="https://png.pngtree.com/png-vector/20250119/ourmid/pngtree-glossy-baked-beans-piled-png-image_15263028.png" alt="bean">
+
+  <script>
+    const b = document.getElementById('bean');
+
+    function jump() {
+      const w = window.innerWidth - (b.offsetWidth || 100);
+      const h = window.innerHeight - (b.offsetHeight || 100);
+      
+      const x = Math.floor(Math.random() * Math.max(0, w));
+      const y = Math.floor(Math.random() * Math.max(0, h));
+      const r = Math.floor(Math.random() * 360);
+
+      b.style.left = x + 'px';
+      b.style.top = y + 'px';
+      b.style.transform = 'rotate(' + r + 'deg)';
+    }
+
+    b.addEventListener('click', jump);
+    window.addEventListener('load', jump);
+  </script>
+</body>
+</html>
